@@ -34,40 +34,34 @@ const useStyles = makeStyles( () => ({
   },
 }));
 
-const NewStudentView = (props) => {
-  const {handleChange, handleSubmit } = props;
+const EditCampusView = (props) => {
+  const {handleChange, handleSubmit, name, address, description } = props;
+  
   const classes = useStyles();
-
   // Render a New Student view with an input form
   return (
     <div>
-      <h1>New Student</h1>
-
+      <h1>Edit Campus</h1>
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-              Add a Student
+              Edit a campus
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Campus Name: </label>
+            <input type="text" name="name" onChange ={(e) => handleChange(e)} defaultValue={name} />
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
+            <label style={{color:'#11153e', fontWeight: 'bold'}} >Campus Address: </label>
+            <input type="text" name="address" onChange={(e) => handleChange(e)} defaultValue={address}/>
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
-            <br/>
-            <br/>
-
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Id: </label>
-            <input type="text" name="campusId" onChange={(e) => handleChange(e)} />
+            <label style={{color:'#11153e', fontWeight: 'bold'}} >Description: </label>
+            <input type="text" name="description" onChange={(e) => handleChange(e)} defaultValue={description}/>
             <br/>
             <br/>
 
@@ -83,4 +77,4 @@ const NewStudentView = (props) => {
   )
 }
 
-export default NewStudentView;
+export default EditCampusView;
