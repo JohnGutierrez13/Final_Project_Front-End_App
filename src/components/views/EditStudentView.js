@@ -61,7 +61,7 @@ const EditStudentView = (props) => {
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}} >Email: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} defaultValue={studentEmail}/>
+            <input type="text" name="email" onChange={(e) => handleChange(e)} defaultValue={studentEmail}/>
             <br/>
             <br/>
 
